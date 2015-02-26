@@ -96,11 +96,9 @@ var server = http.createServer(function (request, response) {
 	],
 	// optional callback
 	function(err, results){
-	    console.log(results);
 	    var total = results.reduce(function(previousValue, currentValue, index, array) {
   			return previousValue + currentValue;
 		});
-		console.log(total);
 	    response.writeHead(200, {"Content-Type": "text/plain"});
   		response.end("Node.js counts to 1 billion\nNode.js did it in " + total + "ms");
 	});
